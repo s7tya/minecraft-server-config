@@ -50,7 +50,7 @@ Type=simple
 User=ubuntu
 Group=ubuntu
 WorkingDirectory=/opt/minecraft
-ExecStart=/opt/minecraftlauncher.sh
+ExecStart=/opt/minecraft/launcher.sh
 Restart=always
 
 [Install]
