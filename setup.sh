@@ -36,7 +36,7 @@ EOS
 # Launch
 chown -R ubuntu:ubuntu /opt/minecraft
 chmod +x launcher.sh
-sh ./launch.sh
+sh ./launcher.sh
 
 # Agree to the eula
 echo "eula=true" > eula.txt
