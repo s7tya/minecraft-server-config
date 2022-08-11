@@ -30,7 +30,7 @@ curl -so paper.jar https://api.papermc.io/v2/projects/paper/versions/${MINECRAFT
 # Create launcher
 cat <<EOS > launcher.sh
 #!/bin/bash
-java -Xms2G -Xmx2G -jar /opt/minecraftpaper.jar --nogui
+java -Xms2G -Xmx2G -jar /opt/minecraft/paper.jar --nogui
 EOS
 
 # Launch

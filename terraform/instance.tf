@@ -5,9 +5,11 @@ resource "aws_instance" "minecraft_instance" {
   instance_type          = "t2.medium"
   key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.minecraft_security_group.id]
+  subnet_id              = aws_subnet.minecraft_subnet.id
 
   # Setup minecraft
-  user_data = "curl -s https://raw.githubusercontent.com/s7tya/minecraft-server-config/master/setup.sh | sudo bash -"
+  # user_data = "curl -s https://raw.githubusercontent.com/s7tya/minecraft-server-config/master/setup.sh | sudo bash"
+  user_data = file("../setup.sh")
 }
 
 # resource "aws_spot_instance_request" "minecraft_instance" {
@@ -20,6 +22,6 @@ resource "aws_instance" "minecraft_instance" {
 #   wait_for_fulfillment           = true
 
 #   # Setup minecraft
-#   user_data = "curl -s https://raw.githubusercontent.com/s7tya/minecraft-server-config/master/setup.sh | sudo bash -"
+#   user_data = "curl -s https://raw.githubusercontent.com/s7tya/minecraft-server-config/master/setup.sh | sudo bash"
 
 # }
